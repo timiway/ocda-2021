@@ -17,6 +17,7 @@ html, body { height: 100%; background: #7d0909;}
 .snow { animation: key-snow 5s ease both; }
 .intro { animation: key-intro 2s ease both; }
 .down { animation: key-slide 800ms ease both; }
+.swing { animation: key-swing 5s ease-in-out infinite; transform-origin: 50% 0; }
 .fill { animation: key-fill 1s ease both; }
 .deer { animation: key-deer 10s ease 2s infinite both; transform-origin: 50% 120%; }
 .bull { animation: key-bull 3s linear 5s infinite both; }
@@ -34,6 +35,12 @@ html, body { height: 100%; background: #7d0909;}
 }
 @keyframes key-slide {
     from { top: -200px; opacity: 0; }
+}
+@keyframes key-swing {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    70% { transform: rotate(-4deg); }
+    100% { transform: rotate(0deg); }
 }
 @keyframes key-snow {
     0% { opacity: 1; transform: scale(1.2);}

@@ -35,9 +35,9 @@
         <div class="ele down" style="width: 70px; left: -20px; top: 10px;"><img src="img/008.png" /></div>
         <div class="ele down" style="width: 100px; right: -20px; top: -40px;"><img src="img/020.png" /></div>
         <div class="ele down" style="width: 140px; right: 50px; top: 0;"><img src="img/024.png" /></div>
-        <div class="ele down" style="width: 90px; right: 10px; top: 130px;"><img src="img/025.png" /></div>
-        <div class="ele down" style="width: 90px; right: 100px; top: 0;"><img src="img/019.png" /></div>
-        <div class="ele down" style="width: 130px; right: 5px; top: 0;"><img src="img/023.png" /></div>
+        <div class="ele down to-swing" style="width: 90px; right: 10px; top: 130px;"><img src="img/025.png" /></div>
+        <div class="ele down to-swing" style="width: 90px; right: 100px; top: 0;"><img src="img/019.png" /></div>
+        <div class="ele down to-swing" style="width: 130px; right: 5px; top: 0;"><img src="img/023.png" /></div>
         <div class="ele rotate2" style="width: 70px; left: -10px; top: -20px;"><img src="img/009.png" /></div>
         <div class="ele rotate1" style="width: 70px; left: 20px; top: 400px;"><img src="img/010.png" /></div>
         <div class="ele rotate2" style="width: 80px; right: -20px; top: 300px;"><img src="img/011.png" /></div>
@@ -66,7 +66,13 @@
             //
             $(".star").each(function () {$(this).addClass(Math.round(Math.random())? 'rotate1':'rotate2')});
             $(".intro").each(function (i) {$(this).css('animation-delay', i*600+800 +'ms')});
-            $(".down").each(function (i) {$(this).css('animation-delay', i*100+2000 +'ms')});
+            $(".down").each(function (i) {
+                var that = $(this);
+                that.css('animation-delay', i*100+2000 +'ms');
+                if (that.is('.to-swing')) {
+                    setTimeout(function() {that.addClass('swing')}, i*300+2600);
+                }
+            });
             $(".fill").each(function (i) {$(this).css('animation-delay', i*100+3000 +'ms')});
             $(".snow-big").each(function () {$(this).css('animation-delay', Math.round(Math.random()*5000)+'ms')});
             //
