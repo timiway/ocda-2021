@@ -85,7 +85,7 @@
             $(window).resize(function () {
                 var ww = $(this).width(), wh = $(this).height();
                 var pw = $('.app-body').width(), ph = $('.app-body').height();
-                var flip = wh < ww;
+                var flip = wh < ww && false;
                 var deg = flip? '90deg':'0';
                 var ratio = flip? Math.min(ww/ph, wh/pw):Math.min(ww/pw, wh/ph);
                 $('.app-body').css({
